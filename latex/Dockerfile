@@ -1,4 +1,17 @@
+###############################################################################
 FROM debian:stable-slim
-RUN apt-get update && \
-    apt-get install -y texlive-full && \
-    apt-get clean
+
+LABEL maintainer="openscience.elaine@uni-rostock.de"
+
+# Update current instance
+RUN apt update && \
+    apt full-upgrade -y && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install texlive
+RUN apt update && \
+    apt install -y \
+        texlive-full && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*

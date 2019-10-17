@@ -1,6 +1,11 @@
-FROM debian:stable-slim
-RUN apt-get update && \
-    apt-get install -y \
-        texlive-full \
+###############################################################################
+FROM sfbelaine/common:latex
+
+LABEL maintainer="openscience.elaine@uni-rostock.de"
+
+# Install git
+RUN apt update && \
+    apt install -y \
         git && \
-    apt-get clean
+    apt clean && \
+    rm -rf /var/lib/apt/lists/*
