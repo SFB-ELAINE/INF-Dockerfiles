@@ -17,17 +17,7 @@ RUN apt update && \
     apt install -y \
         wget \
         git \
-        tex-common texinfo equivs perl-tk perl-doc \
-        cm-super \
-        lcdf-typetools \
-        lmodern \
-        t1utils \
-        tex-gyre \
-        texlive-font-utils \
-        texlive-fonts-extra \
-        texlive-fonts-extra-links \
-        texlive-fonts-recommended \
-        texlive-metapost && \
+        tex-common texinfo equivs perl-tk perl-doc && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
