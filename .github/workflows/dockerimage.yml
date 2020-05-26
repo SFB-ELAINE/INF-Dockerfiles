@@ -1,0 +1,64 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build_latex_image:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Build docker `latex` image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: sfbelaine/common
+        always_pull: true
+        tags: latex_${{ github.sha }},latex_latest
+        path: ./latex/
+
+    - name: Build docker `latex-git` image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: sfbelaine/common
+        always_pull: true
+        tags: latex-git_${{ github.sha }},latex-git_latest
+        path: ./latex-git/
+
+  build_texlive19_image:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: Build docker `texlive19-git` image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: sfbelaine/common
+        always_pull: true
+        tags: texlive19-git_${{ github.sha }},texlive19-git_latest
+        path: ./texlive19-git/
+        
+    - name: Build docker `texlive19-git-svn` image
+      uses: docker/build-push-action@v1.1.0
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: sfbelaine/common
+        always_pull: true
+        tags: texlive19-git-svn_${{ github.sha }},texlive19-git-svn_latest
+        path: ./texlive19-git-svn/
+        
