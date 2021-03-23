@@ -1,5 +1,5 @@
 ###############################################################################
-FROM ubuntu:19.10
+FROM ubuntu:focal-20210217
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
 
@@ -11,7 +11,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update current instance and install texlive
 RUN apt update && \
-    apt full-upgrade -y && \
     apt install -y \
         git \
         texlive-full && \

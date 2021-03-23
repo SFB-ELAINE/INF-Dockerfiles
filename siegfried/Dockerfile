@@ -10,7 +10,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install wget
 RUN apt update && \
     apt install -y \
-        wget && \
+        wget \
+        gnupg && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 

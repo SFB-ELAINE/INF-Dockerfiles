@@ -1,13 +1,7 @@
 ###############################################################################
-FROM debian:stable-slim
+FROM debian:stable-20210311-slim
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
-
-# Update current instance
-RUN apt update && \
-    apt full-upgrade -y && \
-    apt clean && \
-    rm -rf /var/lib/apt/lists/*
 
 # Install texlive
 RUN apt update && \
