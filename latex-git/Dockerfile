@@ -1,5 +1,5 @@
 ###############################################################################
-FROM sfbelaine/common:latex
+FROM sfbelaine/common:latex_latest
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
 

@@ -26,4 +26,7 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
+# update signatures
+RUN sf -update
+
 CMD ["/bin/bash"]

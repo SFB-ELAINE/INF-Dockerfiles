@@ -1,5 +1,5 @@
 ###############################################################################
-FROM sfbelaine/common:texlive19-git
+FROM sfbelaine/common:texlive19-git_latest
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
 
