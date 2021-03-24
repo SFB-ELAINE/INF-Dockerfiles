@@ -26,7 +26,8 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-# update signatures
-RUN sf -update
+# update signatures and build wikidata identifier
+RUN sf -update && \
+    roy build -wikidata
 
 CMD ["/bin/bash"]
