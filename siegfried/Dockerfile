@@ -26,8 +26,9 @@ RUN apt update && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
 
-# update signatures and build wikidata identifier
-RUN sf -update && \
+# harvest signatures and build wikidata identifier
+RUN roy harvest && \
+    roy harvest -wikidata && \
     roy build -wikidata
 
 CMD ["/bin/bash"]
