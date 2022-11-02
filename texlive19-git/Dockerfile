@@ -1,5 +1,5 @@
 ###############################################################################
-FROM ubuntu:focal-20210217
+FROM ubuntu:focal-20221019
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
 

@@ -1,5 +1,5 @@
 ###############################################################################
-FROM ubuntu:focal-20210217
+FROM ubuntu:focal-20221019
 
 # Installing https://github.com/richardlehane/siegfried
 LABEL maintainer="openscience.elaine@uni-rostock.de"

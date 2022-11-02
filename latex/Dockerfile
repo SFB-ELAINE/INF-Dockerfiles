@@ -1,5 +1,5 @@
 ###############################################################################
-FROM debian:stable-20210311-slim
+FROM debian:stable-20221024-slim
 
 LABEL maintainer="openscience.elaine@uni-rostock.de"
 
